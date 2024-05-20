@@ -117,11 +117,12 @@ $userId= Auth::user()->id;
 
         session()->flash('success','Profile Updated successfully');
 
-        return response()->json([
+      /*  return response()->json([
             'status'=>true,
             'message'=>'Profile Updated successfully'
 
-        ]);
+        ]);*/
+        return redirect()->route('account.profile');
 
     }else{
         return response()->json([
