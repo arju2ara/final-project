@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ParcelController;
 use App\Http\Controllers\admin\ShippedController;
 use App\Http\Controllers\admin\StaffController;
-use App\Http\Controllers\admin\CategoryController;
+
 use App\Http\Controllers\admin\AcceptItemController;
 use App\Http\Controllers\admin\CollectedController;
 use App\Http\Controllers\admin\PendingController;
@@ -19,16 +19,17 @@ use App\Http\Controllers\admin\ArrivedController;
 use App\Http\Controllers\admin\PickedupController;
 use App\Http\Controllers\admin\UnsuccessfullController;
 use App\Http\Controllers\admin\ReadyToPickController;
+use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FrontController;
 use Illuminate\Testing\PendingCommand;
-
+use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\CategoryController;
 
 Route::get('/', function () {
  return view('admin.login');
-//return view('admin.track.track');
-  //return view('admin.parcel.create');
- // return view('admin.report.report');
+
+
 });
 
 //Route::get('/',[FrontController::class,'index'])->name('front.home');
@@ -36,11 +37,34 @@ Route::get('/', function () {
 
 
 
-Route::get('/register',[AuthController::class,'register'])->name('account.register');
 
-Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
+Route::get('/forgot-password',[AuthController::class,'forgotPassword'])->name('front.forgotPassword');
+Route::post('/process-forgot-password',[AuthController::class,'processForgotPassword'])->name('front.processForgotPassword');
+Route::get('/reset-password/{token}',[AuthController::class,'resetPassword'])->name('front.resetPassword');
+Route::post('/process-reset-password',[AuthController::class,'processResetPassword'])->name('front.processResetPassword');
 
 
+Route::group(['prefix'=>'account'],function(){
+  Route::group(['middleware'=>'guest'],function(){
+    Route::get('/login',[AuthController::class,'login'])->name('account.login');
+    Route::post('/login',[AuthController::class,'authenticate'])->name('account.authenticate');
+    Route::get('/register',[AuthController::class,'register'])->name('account.register');
+
+    Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
+
+    
+  });
+
+  Route::group(['middleware'=>'auth'],function(){
+    Route::get('/profile',[AuthController::class,'profile'])->name('account.profile');
+    Route::post('/update-profile', [AuthController::class, 'updateProfile'])->name('account.updateProfile');
+
+    Route::get('/logout',[AuthController::class,'logout'])->name('account.logout');
+    Route::get('/change-password',[AuthController::class,'showChangePasswordForm'])->name('account.changePassword');
+    Route::post('/process-change-password',[AuthController::class,'changePassword'])->name('account.processChangePassword');
+  });
+
+  });
 
 
 Route::group(['prefix'=>'admin'],function(){
@@ -61,11 +85,9 @@ Route::group(['middleware'=>'admin.auth'],function(){
     Route::get('/categories/{category}/edit',[CategoryController::class,'edit'])->name('categories.edit');
     Route::put('/categories/{category}',[CategoryController::class,'update'])->name('categories.update');
     Route::delete('/categories/{category}',[CategoryController::class,'destroy'])->name('categories.delete');
-    Route::delete('/categories/{id}', 'CategoryController@destroy')->name('categories.destroy');
+    Route::delete('/categories/{id}', [CategoryController::class,'destroy'])->name('categories.destroy');
 
-
-
-
+  
 
     //staff Routes
    Route::get('/staffs',[StaffController::class,'index'])->name('staffs.index');
@@ -134,6 +156,23 @@ Route::get('/deliver-parcels', [DeliverController::class, 'index'])->name('deliv
 
 //report
 Route::post('/admin/parcels/report', [ParcelController::class , 'report'])->name('parcels.report');
+Route::get('/parcel-report', [ParcelController::class , 'reportView'])->name('reportView');
+//Route::get('/login',[AuthController::class,'login'])->name('account.login');
+
+Route::get('/parcel/report/{id}', [ParcelController::class, 'reportView'])->name('parcel.reportView');
+//users
+Route::get('/users',[UserController::class,'index'])->name('users.index');
+
+Route::get('/users/create',[UserController::class,'create'])->name('users.create');
+Route::post('/users/store',[UserController::class,'store'])->name('users.store');
+Route::get('/users/{user}/edit',[UserController::class,'edit'])->name('users.edit');
+Route::put('/users/{user}',[UserController::class,'update'])->name('users.update');
+Route::delete('/users/{user}',[UserController::class,'destroy'])->name('users.delete');
+Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
+
+//setting routes
+Route::get('/change-password',[SettingController::class,'showChangePasswordForm'])->name('admin.showChangePasswordForm');
+Route::post('/process-change-password',[SettingController::class,'processChangePassword'])->name('admin.processChangePassword');
 
 });
 

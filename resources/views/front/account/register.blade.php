@@ -15,7 +15,8 @@
 <section class=" section-10">
     <div class="container">
         <div class="login-form">    
-            <form action="" method="post" name="registrationForm" id="registrationForm">
+            <form action="{{ route('account.processRegister') }}" method="POST" name="registrationForm" id="registrationForm">
+                @csrf
                 <h4 class="modal-title">Register Now</h4>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Name" id="name" name="name">
@@ -34,7 +35,8 @@
                 <p></p>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Confirm Password" id="cpassword" name="password_confirmed">
+                    <input type="password" class="form-control" placeholder="Confirm Password" id="cpassword" name="password_confirmation">
+
                 <p></p>
                 </div>
                 <div class="form-group small">
@@ -42,7 +44,7 @@
                 </div> 
                 <button type="submit" class="btn btn-dark btn-block btn-lg" value="Register">Register</button>
             </form>			
-            <div class="text-center small">Already have an account? <a href="login.php">Login Now</a></div>
+            <div class="text-center small">Already have an account? <a href="{{route('account.login')}}">Login Now</a></div>
         </div>
     </div>
 </section>
@@ -50,17 +52,16 @@
 
 @section('customJs')
 <script type="text/javascript">
-
 $("#registrationForm").submit(function(event){
-event.preventDefault();
-
-$.ajax({
- url:'{{route("account.processRegister")}}',
- type:'post',
- data:$(this).serializeArray(),
- dataType:'json',
-
- success: function(response){
+    event.preventDefault();
+    $("button[type='submit']").prop('disable',true);
+    $.ajax({
+        url: '{{ route("account.processRegister") }}',
+        type: 'post',
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function(response){
+            $("button[type='submit']").prop('disable',false);
    var errors= response.errors;
    if(response.status== false){
    if(errors.name){
@@ -96,17 +97,19 @@ $.ajax({
     
     $("#password").siblings.("p").addClass('invalid-feedback').html('');
     $("#password").removeClass('is-invalid');
+
+    window.location.href="{{route('account.login')}}";
+
  }
 
 
  },
- error:function(jQXHR,exception){
-    console.log.("Something went wrong");
- }
-
+        error: function(jQXHR, exception){
+            console.log("Something went wrong");
+        }
+    });
 });
 
-});
 
 </script>
     

@@ -158,6 +158,32 @@
                     </ul>
                 </li>
 
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            User
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item">
+                            <a href="{{ route('users.create') }}" class="nav-link">
+                                <i class="fas fa-angle-right nav-icon"></i>
+                                <p>Add New </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('users.index') }}" class="nav-link">
+                                <i class="fas fa-angle-right nav-icon"></i>
+                                <p>List</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <!-- Track Parcel -->
                 <li class="nav-item">
                     <a href="{{route('track_parcel')}}" class="nav-link">
@@ -168,7 +194,7 @@
 
                 <!-- Reports -->
                 <li class="nav-item">
-                    <a href="{{ route('parcels.report') }}" class="nav-link">
+                    <a href="{{route('reportView')}}" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>Reports</p>
                     </a>

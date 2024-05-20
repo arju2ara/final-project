@@ -12,6 +12,7 @@
 		<!-- Select2 CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <script src="{{ asset('js/custom/script.js') }}"></script>
 
 <!-- Select2 JS -->
@@ -97,7 +98,7 @@
 								<i class="fas fa-user-cog mr-2"></i> Settings								
 							</a>
 							<div class="dropdown-divider"></div>
-							<a href="#" class="dropdown-item">
+							<a href="{{route('admin.showChangePasswordForm')}}" class="dropdown-item">
 								<i class="fas fa-lock mr-2"></i> Change Password
 							</a>
 							<div class="dropdown-divider"></div>
@@ -155,6 +156,7 @@ $.ajaxSetup({
 </script>
 
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 @yield('customJs')
 

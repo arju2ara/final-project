@@ -110,37 +110,7 @@
                               
         <div class="col-md-9">
                 <div class="card">
-                 {{--}}   <form action="{{ route('parcels.update', $parcel->id) }}" method="post" name="changeParcelStatusForm" id="changeParcelStatusForm">
-                        @csrf
-                        @method('PUT') 
-                        <div class="card-body">
-                        <h2 class="h4 mb-3">Parcel Status</h2>
-                        <div class="mb-3">
-                            <select id="status" name="status">
                 
-                                <option  {{($parcel->status == 'Pending') ? 'selected' : ''}}  value="Pending">Pending</option>
-                                <option  {{($parcel->status == 'Collected') ? 'selected' : ''}}   value="Collected">Collected</option>
-                                <option  {{($parcel->status == 'Delivered') ? 'selected' : ''}}   value="Delivered">Delivered</option>
-                                <option  {{($parcel->status == 'Shipped') ? 'selected' : ''}}   value="Shipped">Shipped</option>
-                                <option {{($parcel->status == 'In-transit') ? 'selected' : ''}}   value="In-transit">In-transit</option>
-                                <option {{($parcel->status == 'Picked-up') ? 'selected' : ''}}   value="Picked-up">Picked-up</option>
-                                <option {{($parcel->status == 'Ready to pickup') ? 'selected' : ''}}   value="Ready to pickup">Ready to pickup</option>
-                                <option {{($parcel->status == 'Out for delivery') ? 'selected' : ''}}   value="Out for delivery">Out for delivery</option>
-                                <option {{($parcel->status == 'Arrived at Destination') ? 'selected' : ''}}   value="Arrived at Destination">Arrived at Destination</option>
-                                <option {{($parcel->status == 'Unsuccessfull Delivery Attempt') ? 'selected' : ''}}   value="Unsuccessfull Delivery Attempt">Unsuccessfull Delivery Attempt</option>
-                            
-                            </select>
-                        </div>
-                      /* <div class="mb-3">
-                            <label for="shipped_date">Shipped Date</label>
-                           <input value="{{$parcel->shipped_date}}" type="text" name="shipped_date" id="shipped_date" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    
-                    </div>
-                </form>--}}
 
                 <form action="{{ route('parcels.changeParcelStatus', $parcel->id) }}" method="post" name="changeParcelStatusForm" id="changeParcelStatusForm">
                     @csrf
@@ -179,20 +149,7 @@
 
 
              </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="h4 mb-3">Send Email</h2>
-                        <div class="mb-3">
-                            <select name="status" id="status" class="form-control">
-                                <option value="">Customer</option>                                                
-                                <option value="">Admin</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-primary">Send</button>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

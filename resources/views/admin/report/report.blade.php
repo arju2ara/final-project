@@ -15,31 +15,34 @@
         </div>
         <button type="submit" class="btn btn-primary">Show Report</button>
     </form>
-    @if(isset($parcels) && $parcels->isNotEmpty())
-        <table class="table table-bordered mt-4">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Sender Name</th>
-                    <th>Recipient Name</th>
-                    <th>Status</th>
-                    <th>Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($parcels as $parcel)
+
+    @if (request()->isMethod('post'))
+        @if ($parcels->isEmpty())
+            <p class="mt-5">No parcels found for the selected dates.</p>
+        @else
+            <table class="table table-bordered mt-4">
+                <thead>
                     <tr>
-                        <td>{{ $parcel->id }}</td>
-                        <td>{{ $parcel->sender_name }}</td>
-                        <td>{{ $parcel->recipient_name }}</td>
-                        <td>{{ $parcel->status }}</td>
-                        <td>{{ $parcel->amount }}</td>
+                        <th>ID</th>
+                        <th>Sender Name</th>
+                        <th>Recipient Name</th>
+                        <th>Status</th>
+                        <th>Amount</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @else
-        <p class="mt-5">No parcels found for the selected dates.</p>
+                </thead>
+                <tbody>
+                    @foreach($parcels as $parcel)
+                        <tr>
+                            <td>{{ $parcel->id }}</td>
+                            <td>{{ $parcel->sender_name }}</td>
+                            <td>{{ $parcel->recipient_name }}</td>
+                            <td>{{ $parcel->status }}</td>
+                            <td>{{ $parcel->price }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @endif
     @endif
 </div>
 @endsection

@@ -167,26 +167,18 @@ return view('admin.category.create');
         }
     }
 
-  public function destroy($categoryId,Request $request){
+ 
+
+  
+    public function destroy($id,Request $request){
         
-        $category = Category::find($categoryId);
-        if(empty($category)){
-            session()->flash('error','Branch not found!!');
-            return response()->json([
-                'status'=>true,
-                'message'=>'Branch not found!'
-            ]);
-          
-            // return redirect()->route('categories.index');
-        }
+        $category = Category::findOrFail($id);
 
         $category->delete();
         session()->flash('success','Branch deleted successfully!');
-        return response()->json([
-            'status'=>true,
-            'message'=>'Branch deleted successfully!'
-        ]);
+        return redirect()->route('categories.index');
 
     } 
+
     
 }
