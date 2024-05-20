@@ -27,12 +27,12 @@ use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\CategoryController;
 
 Route::get('/', function () {
- return view('admin.login');
+// return view('admin.login');
 
 
 });
 
-//Route::get('/',[FrontController::class,'index'])->name('front.home');
+Route::get('/',[FrontController::class,'index'])->name('front.home');
 
 
 

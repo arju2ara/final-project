@@ -18,9 +18,9 @@
 
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3">
-                        <h1 class="display-4 text-white mb-3">Kids Fashion</h1>
+                        <h1 class="display-4 text-white mb-3">Courier Service</h1>
                         <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                        <a class="btn btn-outline-light py-2 px-4 mt-3" href="#">Shop Now</a>
+                        
                     </div>
                 </div>
             </div>
@@ -36,9 +36,9 @@
 
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3">
-                        <h1 class="display-4 text-white mb-3">Womens Fashion</h1>
+                        <h1 class="display-4 text-white mb-3">Courier Service</h1>
                         <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                        <a class="btn btn-outline-light py-2 px-4 mt-3" href="#">Shop Now</a>
+                       
                     </div>
                 </div>
             </div>
@@ -55,9 +55,9 @@
 
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3">
-                        <h1 class="display-4 text-white mb-3">Shop Online at Flat 70% off on Branded Clothes</h1>
+                        <h1 class="display-4 text-white mb-3">Courier Service</h1>
                         <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                        <a class="btn btn-outline-light py-2 px-4 mt-3" href="#">Shop Now</a>
+                       
                     </div>
                 </div>
             </div>
@@ -77,26 +77,26 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="box shadow-lg">
-                    <div class="fa icon fa-check text-primary m-0 mr-3"></div>
-                    <h2 class="font-weight-semi-bold m-0">Quality Product</h5>
+                    <div class="fa icon fas fa-calendar-check text-primary m-0 mr-3"></div>
+                    <h2 class="font-weight-semi-bold m-0">Booking</h5>
                 </div>                    
             </div>
             <div class="col-lg-3 ">
                 <div class="box shadow-lg">
-                    <div class="fa icon fa-shipping-fast text-primary m-0 mr-3"></div>
-                    <h2 class="font-weight-semi-bold m-0">Free Shipping</h2>
+                    <div class="fa icon fas fa-box text-primary m-0 mr-3"></div>
+                    <h2 class="font-weight-semi-bold m-0">Packing</h2>
                 </div>                    
             </div>
             <div class="col-lg-3">
                 <div class="box shadow-lg">
-                    <div class="fa icon fa-exchange-alt text-primary m-0 mr-3"></div>
-                    <h2 class="font-weight-semi-bold m-0">14-Day Return</h2>
+                    <div class="fa icon fa-shipping-fast text-primary m-0 mr-3"></div>
+                    <h2 class="font-weight-semi-bold m-0">Transportation</h2>
                 </div>                    
             </div>
             <div class="col-lg-3 ">
                 <div class="box shadow-lg">
-                    <div class="fa icon fa-phone-volume text-primary m-0 mr-3"></div>
-                    <h2 class="font-weight-semi-bold m-0">24/7 Support</h5>
+                    <div class="fa icon fas fa-check-circle text-success"></div>
+                    <h2 class="font-weight-semi-bold m-0">Delivery</h5>
                 </div>                    
             </div>
         </div>
