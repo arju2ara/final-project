@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('recipient_address');
             $table->string('recipient_contact');
             $table->boolean('type')->default(0); // 0 for Pickup, 1 for Deliver
-            $table->string('from_branch_details')->nullable(); // Changed from foreignId
-            $table->string('to_branch_details')->nullable();
+            $table->foreignId('from_branch_id')->nullable()->constrained('categories')->onDelete('cascade');
+            $table->foreignId('to_branch_id')->nullable()->constrained('categories')->onDelete('cascade');
             $table->decimal('weight', 8, 2);
             $table->decimal('height', 8, 2);
             $table->decimal('length', 8, 2);
