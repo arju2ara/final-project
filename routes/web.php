@@ -25,14 +25,21 @@ use App\Http\Controllers\FrontController;
 use Illuminate\Testing\PendingCommand;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
 // return view('admin.login');
 
 
 });
+Route::get('/about', function() {
+  return view('front.about');
+})->name('front.about');
 
-Route::get('/',[FrontController::class,'index'])->name('front.home');
+Route::get('/contacts', [ContactController::class, 'create'])->name('front.create');
+Route::post('/contacts', [ContactController::class, 'store'])->name('front.contacts');
+
+Route::get('/home',[FrontController::class,'index'])->name('front.home');
 
 
 
@@ -49,6 +56,10 @@ Route::group(['prefix'=>'account'],function(){
     Route::get('/login',[AuthController::class,'login'])->name('account.login');
     Route::post('/login',[AuthController::class,'authenticate'])->name('account.authenticate');
     Route::get('/register',[AuthController::class,'register'])->name('account.register');
+    
+
+
+
 
     Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
 

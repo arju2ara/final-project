@@ -137,7 +137,7 @@ $userId= Auth::user()->id;
 
 public function logout(){
     Auth::logout();
-    return redirect()->route('account.login')->with('success','You successfully logged out!');
+    return redirect()->route('front.home')->with('success','You successfully logged out!');
 }
 
 

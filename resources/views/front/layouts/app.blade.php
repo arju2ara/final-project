@@ -51,20 +51,20 @@
 		<div class="row align-items-center py-3 d-none d-lg-flex justify-content-between">
 			<div class="col-lg-4 logo">
 				<a href="index.php" class="text-decoration-none">
-					<span class="h1 text-uppercase text-primary bg-dark px-2">Online</span>
-					<span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">SHOP</span>
+					<span class="h1 text-uppercase text-primary bg-dark px-2">Courier</span>
+					<span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Service</span>
 				</a>
 			</div>
 			<div class="col-lg-6 col-6 text-left  d-flex justify-content-end align-items-center">
-				<a href="account.php" class="nav-link text-dark">My Account</a>
-				<form action="">					
+				{{-- <a href="account.php" class="nav-link text-dark">My Account</a> --}}
+				{{--<form action="">					
 					<div class="input-group">
 						<input type="text" placeholder="Search For Products" class="form-control" aria-label="Amount (to the nearest dollar)">
 						<span class="input-group-text">
 							<i class="fa fa-search"></i>
 					  	</span>
 					</div>
-				</form>
+				</form>--}}
 			</div>		
 		</div>
 	</div>
@@ -87,66 +87,84 @@
           				<a class="nav-link active" aria-current="page" href="index.php" title="Products">Home</a>
         			</li> -->
 
-					<li class="nav-item dropdown">
-						<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Electronics
-						</button>
-						<ul class="dropdown-menu dropdown-menu-dark">
-							<li><a class="dropdown-item nav-link" href="#">Mobile</a></li>
-							<li><a class="dropdown-item nav-link" href="#">Tablets</a></li>
-							<li><a class="dropdown-item nav-link" href="#">Laptops</a></li>
-							<li><a class="dropdown-item nav-link" href="#">Speakers</a></li>
-							<li><a class="dropdown-item nav-link" href="#">Watches</a></li>
-						</ul>
+					{{-- <li class="nav-item dropdown">
+						<button class="btn btn-dark"  aria-expanded="false">
+							Home
+						</button> --}}
+						
+						
 					</li>
 					<li class="nav-item dropdown">
-						<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Men's Fashion
+						<button class="btn btn-dark "  aria-expanded="false">
+							<li><a class="" href="{{ route('front.about') }}">About Us</a></li>
 						</button>
-						<ul class="dropdown-menu dropdown-menu-dark">
+						{{-- <ul class="dropdown-menu dropdown-menu-dark">
 							<li><a class="dropdown-item" href="#">Shirts</a></li>
 							<li><a class="dropdown-item" href="#">Jeans</a></li>
 							<li><a class="dropdown-item" href="#">Shoes</a></li>
 							<li><a class="dropdown-item" href="#">Watches</a></li>
 							<li><a class="dropdown-item" href="#">Perfumes</a></li>
-						</ul>
+						</ul> --}}
 					</li>
 					<li class="nav-item dropdown">
-						<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Women's Fashion
+						<button class="btn btn-dark "  aria-expanded="false">
+							<li><a class="" href="{{ route('front.contacts') }}">Contact Us</a></li>
+
 						</button>
-						<ul class="dropdown-menu dropdown-menu-dark">
-							<li><a class="dropdown-item" href="#">T-Shirts</a></li>
-							<li><a class="dropdown-item" href="#">Tops</a></li>
-							<li><a class="dropdown-item" href="#">Jeans</a></li>
-							<li><a class="dropdown-item" href="#">Shoes</a></li>
-							<li><a class="dropdown-item" href="#">Watches</a></li>
-							<li><a class="dropdown-item" href="#">Perfumes</a></li>
-						</ul>
+						
 					</li>
 
-					<li class="nav-item dropdown">
-						<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Appliances
-						</button>
-						<ul class="dropdown-menu dropdown-menu-dark">
-							<li><a class="dropdown-item" href="#">TV</a></li>
-							<li><a class="dropdown-item" href="#">Washing Machines</a></li>
-							<li><a class="dropdown-item" href="#">Air Conditioners</a></li>
-							<li><a class="dropdown-item" href="#">Vacuum Cleaner</a></li>
-							<li><a class="dropdown-item" href="#">Fans</a></li>
-							<li><a class="dropdown-item" href="#">Air Coolers</a></li>
-						</ul>
-					</li>
+					<ul class="navbar-nav ms-auto">
+						@if(auth()->guest())
+
+						@else
+						<li class="nav-item dropdown">
+							<button class="btn btn-dark " aria-expanded="false">
+								<li><a class="" href="{{ route('account.login') }}">My Profile</a></li>
+								
+							</button>
+							{{-- <ul class="dropdown-menu dropdown-menu-dark">
+								<li><a class="dropdown-item" href="#">TV</a></li>
+								<li><a class="dropdown-item" href="#">Washing Machines</a></li>
+								<li><a class="dropdown-item" href="#">Air Conditioners</a></li>
+								<li><a class="dropdown-item" href="#">Vacuum Cleaner</a></li>
+								<li><a class="dropdown-item" href="#">Fans</a></li>
+								<li><a class="dropdown-item" href="#">Air Coolers</a></li>
+							</ul> --}}
+						</li>
+							
+						
+						@endif
+					</ul>
+
+					
 					
 					
       			</ul>      			
-      		</div>   
-			<div class="right-nav py-0">
+      		</div> 
+			 
+			 
+		    
+			  <ul class="navbar-nav ms-auto">
+				@if(auth()->guest())
+					<li class="nav-item">
+						<a class="nav-link cartblack" id="loginblack" href="{{ route('account.login') }}">{{ __('Login') }}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link cartblack" id="loginblack" href="{{ route('account.register') }}">{{ __('Register') }}</a>
+					</li>
+				
+				@endif
+			</ul>
+			
+			 
+			{{-- <div class="right-nav py-0">
 				<a href="cart.php" class="ml-3 d-flex pt-2">
 					<i class="fas fa-shopping-cart text-primary"></i>					
 				</a>
-			</div> 		
+			</div> 		 --}}
+		
+
       	</nav>
   	</div>
 </header>
@@ -185,11 +203,11 @@
 			<div class="col-md-4">
 				<div class="footer-card">
 					<h3>My Account</h3>
-					<ul>
+					{{-- <ul>
 						<li><a href="{{route('account.login')}}" title="Sell">Login</a></li>
 						<li><a href="{{route('account.register')}}" title="Advertise">Register</a></li>
 					
-					</ul>
+					</ul> --}}
 				</div>
 			</div>			
 		</div>
@@ -227,4 +245,56 @@ function myFunction() {
 }
 </script>
 </body>
-</html>
+
+
+
+
+
+{{-- </html><nav class="navbar navbar-expand-lg navbar-default navbar-dark fixed-top">
+    <div class="container-fluid navbar-default">
+      <a class="navbar-brand" href="{{ url('/') }}">BLISS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link px-3 active" aria-current="page" href="/">Home</a>
+          <a class="nav-link px-3" href="{{ url('category') }}">Categories</a>
+          <a class="nav-link px-3" href="{{ url('contact') }}">Contact</a>
+          <a class="nav-link px-3" href="{{ url('about') }}">About Us</a>
+        </div>
+        <div class="navbar-nav ms-auto justify-content-center">
+          @if(session('user'))
+            <div class="input-group hello">
+              <form class="d-flex bg-transparent w-100" action="{{ url('searchProduct') }}" method="POST">
+                @csrf
+                <div class="input-group">
+                  <input name="product_name" required type="search" id="search_product" class="form-control bg-dark rounded-pill outline-none shadow-none border-0" placeholder="Search..." aria-label="Search" aria-describedby="button-addon2">
+                  <button class="btn" type="submit" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+              </form>
+            </div>
+            <a class="cartblack nav-link" href="{{ route('cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
+            <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="User Avatar" loading="lazy" />
+              </a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item">{{ App\Models\User::find(session('user'))->name }}</a>
+                <a class="dropdown-item" href="{{ route('logout') }}">
+                  {{ __('Logout') }}
+                </a>
+              </div>
+            </li>
+          @else
+            <li class="nav-item">
+              <a class="nav-link cartblack" id="loginblack" href="{{ route('login') }}">{{ __('Login') }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cartblack" id="loginblack" href="{{ route('register') }}">{{ __('Register') }}</a>
+            </li>
+          @endif
+        </div>
+      </div>
+    </div>
+  </nav> --}}

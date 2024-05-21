@@ -102,6 +102,7 @@
         </div>
     </div>
 </section>
+{{--}}
 <section class="section-3">
     <div class="container">
         <div class="section-title">
@@ -565,7 +566,7 @@
                             <span class="h5"><strong>$100</strong></span>
                             <span class="h6 text-underline"><del>$120</del></span>
                         </div>
-                    </div>                        
+                    </div> --}}                       
                 </div>                                               
             </div>               
         </div>
