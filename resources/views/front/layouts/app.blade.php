@@ -56,15 +56,7 @@
 				</a>
 			</div>
 			<div class="col-lg-6 col-6 text-left  d-flex justify-content-end align-items-center">
-				{{-- <a href="account.php" class="nav-link text-dark">My Account</a> --}}
-				{{--<form action="">					
-					<div class="input-group">
-						<input type="text" placeholder="Search For Products" class="form-control" aria-label="Amount (to the nearest dollar)">
-						<span class="input-group-text">
-							<i class="fa fa-search"></i>
-					  	</span>
-					</div>
-				</form>--}}
+				
 			</div>		
 		</div>
 	</div>
@@ -74,8 +66,8 @@
 	<div class="container">
 		<nav class="navbar navbar-expand-xl" id="navbar">
 			<a href="index.php" class="text-decoration-none mobile-logo">
-				<span class="h2 text-uppercase text-primary bg-dark">Online</span>
-				<span class="h2 text-uppercase text-white px-2">SHOP</span>
+				<span class="h2 text-uppercase text-primary bg-dark">Courier</span>
+				<span class="h2 text-uppercase text-white px-2">Service</span>
 			</a>
 			<button class="navbar-toggler menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       			<!-- <span class="navbar-toggler-icon icon-menu"></span> -->
@@ -98,13 +90,7 @@
 						<button class="btn btn-dark "  aria-expanded="false">
 							<li><a class="" href="{{ route('front.about') }}">About Us</a></li>
 						</button>
-						{{-- <ul class="dropdown-menu dropdown-menu-dark">
-							<li><a class="dropdown-item" href="#">Shirts</a></li>
-							<li><a class="dropdown-item" href="#">Jeans</a></li>
-							<li><a class="dropdown-item" href="#">Shoes</a></li>
-							<li><a class="dropdown-item" href="#">Watches</a></li>
-							<li><a class="dropdown-item" href="#">Perfumes</a></li>
-						</ul> --}}
+						
 					</li>
 					<li class="nav-item dropdown">
 						<button class="btn btn-dark "  aria-expanded="false">
@@ -123,14 +109,7 @@
 								<li><a class="" href="{{ route('account.login') }}">My Profile</a></li>
 								
 							</button>
-							{{-- <ul class="dropdown-menu dropdown-menu-dark">
-								<li><a class="dropdown-item" href="#">TV</a></li>
-								<li><a class="dropdown-item" href="#">Washing Machines</a></li>
-								<li><a class="dropdown-item" href="#">Air Conditioners</a></li>
-								<li><a class="dropdown-item" href="#">Vacuum Cleaner</a></li>
-								<li><a class="dropdown-item" href="#">Fans</a></li>
-								<li><a class="dropdown-item" href="#">Air Coolers</a></li>
-							</ul> --}}
+							
 						</li>
 							
 						
@@ -158,11 +137,7 @@
 			</ul>
 			
 			 
-			{{-- <div class="right-nav py-0">
-				<a href="cart.php" class="ml-3 d-flex pt-2">
-					<i class="fas fa-shopping-cart text-primary"></i>					
-				</a>
-			</div> 		 --}}
+			
 		
 
       	</nav>
@@ -202,8 +177,8 @@
 
 			<div class="col-md-4">
 				<div class="footer-card">
-					<h3>My Account</h3>
-					{{-- <ul>
+					{{-- <h3>My Account</h3>
+					
 						<li><a href="{{route('account.login')}}" title="Sell">Login</a></li>
 						<li><a href="{{route('account.register')}}" title="Advertise">Register</a></li>
 					

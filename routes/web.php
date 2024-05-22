@@ -28,7 +28,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
-// return view('admin.login');
+ return view('admin.login');
 
 
 });
@@ -73,6 +73,10 @@ Route::group(['prefix'=>'account'],function(){
     Route::get('/logout',[AuthController::class,'logout'])->name('account.logout');
     Route::get('/change-password',[AuthController::class,'showChangePasswordForm'])->name('account.changePassword');
     Route::post('/process-change-password',[AuthController::class,'changePassword'])->name('account.processChangePassword');
+    Route::post('/track', [ParcelController::class, 'accountTrackParcel'])->name('account.track_parcel');
+    // Route::get('/track', [ParcelController::class, 'trackParcel'])->name('track_parcel');
+    Route::match(['get', 'post'], '/track', [ParcelController::class, 'accountTrackParcel'])->name('account.track_parcel');
+  
   });
 
   });

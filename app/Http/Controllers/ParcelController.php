@@ -143,6 +143,29 @@ public function index(Request $request)
     }
      
 
+  
+    public function accountTrackParcel(Request $request)
+{
+
+    if ($request->has('ref_no') && $request->filled('ref_no')) {
+        $keyword = $request->ref_no;
+        $parcel = Parcel::where('id', $keyword)->first();
+
+        if (!$parcel) {
+
+            $error = "No parcel found with that ID.";
+            return view('front.account.track-parcel', compact('error'));
+        }
+
+
+        return view('front.account.track-parcel', compact('parcel'));
+    }
+
+
+    return view('front.account.track-parcel');
+}
+
+
     
     public function trackParcel(Request $request)
 {
