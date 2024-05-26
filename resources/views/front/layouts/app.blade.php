@@ -88,13 +88,13 @@
 					</li>
 					<li class="nav-item dropdown">
 						<button class="btn btn-dark "  aria-expanded="false">
-							<li><a class="" href="{{ route('front.about') }}">About Us</a></li>
+							<li><a class="" href="{{ route('front.about') }}">About US</a></li>
 						</button>
 						
 					</li>
 					<li class="nav-item dropdown">
 						<button class="btn btn-dark "  aria-expanded="false">
-							<li><a class="" href="{{ route('front.contacts') }}">Contact Us</a></li>
+							<li><a class="" href="{{ route('front.contacts') }}">Contact US</a></li>
 
 						</button>
 						
@@ -154,23 +154,26 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="footer-card">
-					<h3>Get In Touch</h3>
-					<p>No dolore ipsum accusam no lorem. <br>
-					123 Street, New York, USA <br>
-					exampl@example.com <br>
-					000 000 0000</p>
+					<h3>Connect US</h3>
+					<p>With our Courier service, We can make easy our daily life. <br>
+						24/25 Dilkusha <br>
+						Motijheel,Dhaka-1000<br>
+
+					Email:courierservice@gmail.com <br>
+					phone:09612003003<br>
+				</p>
 				</div>
 			</div>
 
 			<div class="col-md-4">
 				<div class="footer-card">
-					<h3>Important Links</h3>
+					<h3>Useful  Links</h3>
 					<ul>
-						<li><a href="about-us.php" title="About">About</a></li>
-						<li><a href="contact-us.php" title="Contact Us">Contact Us</a></li>						
-						<li><a href="#" title="Privacy">Privacy</a></li>
-						<li><a href="#" title="Privacy">Terms & Conditions</a></li>
-						<li><a href="#" title="Privacy">Refund Policy</a></li>
+						<li><a href="{{route('front.about')}}" title="About">About US</a></li>
+						<li><a href="{{route('front.contacts')}}" title="Contact Us">Contact US</a></li>						
+						{{-- <li><a href="{{route('')}}" title="Privacy">Privacy</a></li>
+						<li><a href="{{route('')}}" title="Privacy">Terms & Conditions</a></li>
+						<li><a href="{{route('')}}" title="Privacy">Refund Policy</a></li> --}}
 					</ul>
 				</div>
 			</div>
@@ -187,17 +190,23 @@
 			</div>			
 		</div>
 	</div>
+	
+	
+
+	
 	<div class="copyright-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 mt-3">
 					<div class="copy-right text-center">
-						<p>© Copyright 2024 Courier Management System. All Rights Reserved</p>
+						<p> Courier Management System. All Rights Reserved</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
 </footer>
 <script src="{{asset('front-assets/js/jquery-3.6.0.min.js')}}"></script>
 <script src="{{asset('front-assets/js/bootstrap.bundle.5.1.3.min.js')}}"></script>
@@ -223,53 +232,3 @@ function myFunction() {
 
 
 
-
-
-{{-- </html><nav class="navbar navbar-expand-lg navbar-default navbar-dark fixed-top">
-    <div class="container-fluid navbar-default">
-      <a class="navbar-brand" href="{{ url('/') }}">BLISS</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link px-3 active" aria-current="page" href="/">Home</a>
-          <a class="nav-link px-3" href="{{ url('category') }}">Categories</a>
-          <a class="nav-link px-3" href="{{ url('contact') }}">Contact</a>
-          <a class="nav-link px-3" href="{{ url('about') }}">About Us</a>
-        </div>
-        <div class="navbar-nav ms-auto justify-content-center">
-          @if(session('user'))
-            <div class="input-group hello">
-              <form class="d-flex bg-transparent w-100" action="{{ url('searchProduct') }}" method="POST">
-                @csrf
-                <div class="input-group">
-                  <input name="product_name" required type="search" id="search_product" class="form-control bg-dark rounded-pill outline-none shadow-none border-0" placeholder="Search..." aria-label="Search" aria-describedby="button-addon2">
-                  <button class="btn" type="submit" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-              </form>
-            </div>
-            <a class="cartblack nav-link" href="{{ route('cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
-            <li class="nav-item dropdown">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="User Avatar" loading="lazy" />
-              </a>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item">{{ App\Models\User::find(session('user'))->name }}</a>
-                <a class="dropdown-item" href="{{ route('logout') }}">
-                  {{ __('Logout') }}
-                </a>
-              </div>
-            </li>
-          @else
-            <li class="nav-item">
-              <a class="nav-link cartblack" id="loginblack" href="{{ route('login') }}">{{ __('Login') }}</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link cartblack" id="loginblack" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-          @endif
-        </div>
-      </div>
-    </div>
-  </nav> --}}

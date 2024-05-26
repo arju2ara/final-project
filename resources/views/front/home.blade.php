@@ -13,13 +13,17 @@
                 <picture>
                     <source media="(max-width: 799px)" srcset="{{asset('front-assets/images/carousel-1-m.jpg')}}" />
                     <source media="(min-width: 800px)" srcset="{{asset('front-assets/images/carousel-1.jpg')}}" />
-                    <img src="{{asset('front-assetsimages/carousel-1.jpg')}}" alt="" />
+                    <img src="{{asset('front-assets/images/carousel-1.jpg')}}" alt="" />
                 </picture>
 
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3">
-                        <h1 class="display-4 text-white mb-3">Courier Service</h1>
-                        <p class="mx-md-5 px-5">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                        <h1 class="display-4 text-white mb-3">Our Valued Services</h1>
+                        <p class="mx-md-5 px-5">
+                            
+                           
+                            Thanks for staying at our courier service.<br>We hope to have the pleasure of doing business with you in the future.
+                        </p>
                         
                     </div>
                 </div>
