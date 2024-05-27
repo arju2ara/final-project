@@ -50,10 +50,10 @@ return view('admin.staff.list',compact('staffs'));
             return response()->json([
                 'status' => false,
                 'errors' => $validator->errors()
-            ], 422); // Use 422 Unprocessable Entity status code for validation errors
+            ], 422); 
         }
 
-        // If validation passes, proceed to save data
+        
         $staff = new Staff();
         $staff->staff = $request->staff;
         $staff->email = $request->email;
@@ -62,16 +62,16 @@ return view('admin.staff.list',compact('staffs'));
         $staff->save();
 
         session()->flash('success','Staff added successfully');
-        // If data is saved successfully, return success response
+
         return response()->json([
             'status' => true,
             'message' => 'Staff added successfully'
         ]);
     } catch (\Exception $e) {
-        // Log any exceptions
+       
         Log::error('Exception in store method: ' . $e->getMessage());
 
-        // Return an error response
+        
         return response()->json([
             'status' => false,
             'message' => 'Internal Server Error'
@@ -90,44 +90,37 @@ return view('admin.staff.list',compact('staffs'));
 
     return view('admin.staff.edit',compact('staff'));
    }
-
-
-   public function update($staffId,Request $request){
+   public function update($staffId, Request $request){
     try {
-
         $staff = Staff::find($staffId);
         if(empty($staff)){
             session()->flash('error','Staff not found');
-
             return response()->json([
-                'status'=>false,
-                'notFound'=>true,
-                'message'=>'Staff not found'
+                'status' => false,
+                'notFound' => true,
+                'message' => 'Staff not found'
             ]);
         }
 
-        // Debug: Log request data
+        
         Log::info('Request data:', $request->all());
 
-        // Validate the request data
+       
         $validator = Validator::make($request->all(), [
             'staff' => 'required',
-            'email' => 'required|unique:staffs,email',
+            'email' => 'required|unique:staffs,email,' . $staffId,
             'password' => 'required',
             'branch' => 'required',
         ]);
 
-        // Check if validation fails
         if ($validator->fails()) {
-            // If validation fails, return error response
             return response()->json([
                 'status' => false,
                 'errors' => $validator->errors()
-            ], 422); // Use 422 Unprocessable Entity status code for validation errors
+            ], 422);
         }
 
-        // If validation passes, proceed to save data
-       
+        // Update staff data
         $staff->staff = $request->staff;
         $staff->email = $request->email;
         $staff->password = $request->password;
@@ -136,22 +129,19 @@ return view('admin.staff.list',compact('staffs'));
 
         session()->flash('success','Staff updated successfully');
 
-        // If data is saved successfully, return success response
         return response()->json([
             'status' => true,
             'message' => 'Staff updated successfully'
         ]);
     } catch (\Exception $e) {
-        // Log any exceptions
-        Log::error('Exception in store method: ' . $e->getMessage());
-
-        // Return an error response
+        Log::error('Exception in update method: ' . $e->getMessage());
         return response()->json([
             'status' => false,
             'message' => 'Internal Server Error'
         ], 500);
     }
-   }
+}
+
 
    public function destroy($staffId,Request $request){
         
@@ -163,7 +153,7 @@ return view('admin.staff.list',compact('staffs'));
             'message'=>'Staff not found!'
         ]);
       
-        // return redirect()->route('categories.index');
+
     }
 
     $staff->delete();
@@ -174,7 +164,4 @@ return view('admin.staff.list',compact('staffs'));
     ]);
 
 }
-
-
-
 }

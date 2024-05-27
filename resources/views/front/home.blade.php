@@ -64,8 +64,8 @@
 
                 <style>
                     img.responsive-img {
-                        width: 100%;    /* makes the image responsive */
-                        height: auto;   /* maintains the aspect ratio */
+                        width: 100%;    
+                        height: auto;   
                     }
                 </style>
                 <picture>
@@ -76,11 +76,7 @@
                 
                 
 
-                {{-- <picture>
-                    <source media="(max-width: 799px)" srcset="{{asset('front-assets/images/5.jpg')}}" />
-                    <source media="(min-width: 800px)" srcset="{{asset('front-assets/images/carousel-5.jpg')}}" />
-                    <img src="{{asset('front-assets/images/5.jpg')}}" alt="" />
-                </picture> --}}
+              
 
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3">

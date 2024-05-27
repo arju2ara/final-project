@@ -120,10 +120,10 @@ return view('admin.category.create');
                 ]);
             }
 
-            // Debug: Log request data
+            
             Log::info('Request data:', $request->all());
     
-            // Validate the request data
+          
             $validator = Validator::make($request->all(), [
                 'Street' => 'required',
                 'City' => 'required',
@@ -131,16 +131,15 @@ return view('admin.category.create');
                 'Contract' => 'required',
             ]);
     
-            // Check if validation fails
             if ($validator->fails()) {
-                // If validation fails, return error response
+            
                 return response()->json([
                     'status' => false,
                     'errors' => $validator->errors()
-                ], 422); // Use 422 Unprocessable Entity status code for validation errors
+                ], 422); 
             }
     
-            // If validation passes, proceed to save data
+            
            
             $category->Street = $request->Street;
             $category->City = $request->City;
@@ -150,16 +149,16 @@ return view('admin.category.create');
 
             session()->flash('success','Branch updated successfully');
     
-            // If data is saved successfully, return success response
+            
             return response()->json([
                 'status' => true,
                 'message' => 'Branch updated successfully'
             ]);
         } catch (\Exception $e) {
-            // Log any exceptions
+           
             Log::error('Exception in store method: ' . $e->getMessage());
     
-            // Return an error response
+            
             return response()->json([
                 'status' => false,
                 'message' => 'Internal Server Error'
@@ -170,16 +169,7 @@ return view('admin.category.create');
  
 
   
-   /* public function destroy($id,Request $request){
-        
-        $category = Category::findOrFail($id);
-
-        $category->delete();
-        session()->flash('success','Branch deleted successfully!');
-        return redirect()->route('categories.index');
-
-    } */
-    
+   
   public function destroy($categoryId,Request $request){
         
     $category = Category::find($categoryId);
@@ -190,7 +180,7 @@ return view('admin.category.create');
             'message'=>'Branch not found!'
         ]);
       
-        // return redirect()->route('categories.index');
+
     }
 
     $category->delete();

@@ -194,7 +194,7 @@ public function reportView(){
 }
 public function report(Request $request)
 {
-    // Initialize $parcels as an empty collection by default
+    
     $parcels = collect();
 
     if ($request->isMethod('post')) {

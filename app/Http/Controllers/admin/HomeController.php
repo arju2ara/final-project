@@ -46,8 +46,7 @@ class HomeController extends Controller
             'totalUnsuccessfulDeliveryParcels'=>$totalUnsuccessfulDeliveryParcels,
             'totalDeliveredParcels'=>$totalDeliveredParcels
         ]);
-       // $admin= Auth::guard('admin')->user();
-       // echo 'Welcome'.$admin->name.'<a href="'.route('admin.logout').'">Logout</a>';
+       
     }
     public function logout(){
         Auth::guard('admin')->logout();

@@ -41,11 +41,7 @@ if($validator->passes()){
     session()->flash('success','You have been registered successfully!');
 
     return redirect()->route('account.login');
-   /* return response()->json([
-
-        'status'=>true,
-
-    ]);*/
+   
 
 } else{
 
@@ -76,7 +72,7 @@ public function authenticate(Request $request){
             return redirect()->route('account.profile');
 
         } else{
-           // session()->flash('error','Either email/passworrd is incorrect.');
+
             return redirect()->route('account.login')->withInput($request->only('email'))->with('error','Either email/passworrd is incorrect.');
         }
 
@@ -117,11 +113,7 @@ $userId= Auth::user()->id;
 
         session()->flash('success','Profile Updated successfully');
 
-      /*  return response()->json([
-            'status'=>true,
-            'message'=>'Profile Updated successfully'
-
-        ]);*/
+      
         return redirect()->route('account.profile');
 
     }else{

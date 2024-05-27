@@ -56,14 +56,9 @@ Route::group(['prefix'=>'account'],function(){
     Route::get('/login',[AuthController::class,'login'])->name('account.login');
     Route::post('/login',[AuthController::class,'authenticate'])->name('account.authenticate');
     Route::get('/register',[AuthController::class,'register'])->name('account.register');
-    
-
-
-
-
+   
     Route::post('/process-register',[AuthController::class,'processRegister'])->name('account.processRegister');
 
-    
   });
 
   Route::group(['middleware'=>'auth'],function(){
@@ -74,7 +69,7 @@ Route::group(['prefix'=>'account'],function(){
     Route::get('/change-password',[AuthController::class,'showChangePasswordForm'])->name('account.changePassword');
     Route::post('/process-change-password',[AuthController::class,'changePassword'])->name('account.processChangePassword');
     Route::post('/track', [ParcelController::class, 'accountTrackParcel'])->name('account.track_parcel');
-    // Route::get('/track', [ParcelController::class, 'trackParcel'])->name('track_parcel');
+
     Route::match(['get', 'post'], '/track', [ParcelController::class, 'accountTrackParcel'])->name('account.track_parcel');
   
   });
@@ -105,6 +100,8 @@ Route::group(['middleware'=>'admin.auth'],function(){
   
 
     //staff Routes
+    Route::resource('staffs', StaffController::class);
+
    Route::get('/staffs',[StaffController::class,'index'])->name('staffs.index');
     Route::get('/staffs/create',[StaffController::class,'create'])->name('staffs.create');
    Route::post('/staffs/store',[StaffController::class,'store'])->name('staffs.store');
@@ -114,7 +111,7 @@ Route::group(['middleware'=>'admin.auth'],function(){
 
    //track
    Route::post('/track', [ParcelController::class, 'trackParcel'])->name('track_parcel');
-  // Route::get('/track', [ParcelController::class, 'trackParcel'])->name('track_parcel');
+
   Route::match(['get', 'post'], '/track', [ParcelController::class, 'trackParcel'])->name('track_parcel');
 
 
@@ -162,7 +159,7 @@ Route::get('/deliver-parcels', [DeliverController::class, 'index'])->name('deliv
 //report
 Route::post('/admin/parcels/report', [ParcelController::class , 'report'])->name('parcels.report');
 Route::get('/parcel-report', [ParcelController::class , 'reportView'])->name('reportView');
-//Route::get('/login',[AuthController::class,'login'])->name('account.login');
+
 
 Route::get('/parcel/report/{id}', [ParcelController::class, 'reportView'])->name('parcel.reportView');
 //users
