@@ -199,6 +199,12 @@
                         <p>Reports</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('contacts.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-file"></i>
+                        <p>Contact US</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -94,9 +94,9 @@
 								<div class="mb-3">No email available</div>
 							@endif
 							<div class="dropdown-divider"></div>
-							<a href="#" class="dropdown-item">
+							{{-- <a href="#" class="dropdown-item">
 								<i class="fas fa-user-cog mr-2"></i> Settings								
-							</a>
+							</a> --}}
 							<div class="dropdown-divider"></div>
 							<a href="{{route('admin.showChangePasswordForm')}}" class="dropdown-item">
 								<i class="fas fa-lock mr-2"></i> Change Password
@@ -121,7 +121,7 @@
 			<!-- /.content-wrapper -->
 			<footer class="main-footer">
 				
-				<strong>Copyright &copy; 2014-2024 Courier Management System All rights reserved.
+				<strong> Courier Management System .All rights reserved.
 			</footer>
 			
 		</div>

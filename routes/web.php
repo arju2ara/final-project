@@ -117,16 +117,6 @@ Route::group(['middleware'=>'admin.auth'],function(){
   // Route::get('/track', [ParcelController::class, 'trackParcel'])->name('track_parcel');
   Route::match(['get', 'post'], '/track', [ParcelController::class, 'trackParcel'])->name('track_parcel');
 
-//report
-
-//Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
-//Route::post('/reports/fetch', [ReportController::class, 'fetchReport'])->name('reports.fetch');
-//Route::post('/reports/fetch', [ReportController::class, 'fetchReport'])->name('reports.fetch');
-//Route::get('/report', 'ReportController@showReports')->name('report.show');
-//Route::post('/admin/reports/fetch', 'App\Http\Controllers\admin\ReportController@fetchReport')->name('reports.fetch');
-//Route::post('/fetch-reports', 'ReportController@fetch')->name('reports.fetch');
-
-//Route::get('/reports', 'ReportController@index')->name('reports');
 
 
    //parcel
@@ -188,7 +178,8 @@ Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
 //setting routes
 Route::get('/change-password',[SettingController::class,'showChangePasswordForm'])->name('admin.showChangePasswordForm');
 Route::post('/process-change-password',[SettingController::class,'processChangePassword'])->name('admin.processChangePassword');
-
+//contacts
+Route::get('/contacts',[ContactController::class,'index'])->name('contacts.index');
 });
 
 });

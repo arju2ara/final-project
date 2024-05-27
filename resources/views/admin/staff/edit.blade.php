@@ -19,9 +19,10 @@
 <section class="content">
     <!-- Default box -->
     <div class="container-fluid">
-        <form action="{{ route('staffs.update', $staff->id) }}" method="POST" id="categoryForm" name="categoryForm">
+        <form action="{{ route('staffs.store') }}" method="POST" id="categoryForm" name="categoryForm">
+        {{-- <form action="{{ route('staffs.update', $staff->id) }}" method="POST" id="categoryForm" name="categoryForm"> --}}
         @csrf
-        @method('PUT')
+         @method('PUT') 
             <div class="card">
             <div class="card-body">								
                 <div class="row">
@@ -51,7 +52,7 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label for="branch">Branch</label>
-                            <input type="text" name="branch" id="branch" class="form-control" placeholder="Branch" value="{{$staff->Contract}}">	
+                            <input type="text" name="branch" id="branch" class="form-control" placeholder="Branch" value="{{$staff->branch}}">	
                        <p></p>
                         </div>
                     </div>

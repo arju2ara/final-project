@@ -75,14 +75,11 @@
     		</button>
     		<div class="collapse navbar-collapse" id="navbarSupportedContent">
       			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        			<!-- <li class="nav-item">
-          				<a class="nav-link active" aria-current="page" href="index.php" title="Products">Home</a>
-        			</li> -->
+        		 <li class="nav-item">
+          				<a class="nav-link active" aria-current="page" href="{{route('front.home')}}" title="Products">Home</a>
+        			</li> 
 
-					{{-- <li class="nav-item dropdown">
-						<button class="btn btn-dark"  aria-expanded="false">
-							Home
-						</button> --}}
+					
 						
 						
 					</li>
@@ -169,23 +166,19 @@
 				<div class="footer-card">
 					<h3>Useful  Links</h3>
 					<ul>
+						<li><a href="{{route('front.home')}}" title="Home">Home</a></li>
 						<li><a href="{{route('front.about')}}" title="About">About US</a></li>
 						<li><a href="{{route('front.contacts')}}" title="Contact Us">Contact US</a></li>						
-						{{-- <li><a href="{{route('')}}" title="Privacy">Privacy</a></li>
-						<li><a href="{{route('')}}" title="Privacy">Terms & Conditions</a></li>
-						<li><a href="{{route('')}}" title="Privacy">Refund Policy</a></li> --}}
+						
 					</ul>
 				</div>
 			</div>
 
 			<div class="col-md-4">
 				<div class="footer-card">
-					{{-- <h3>My Account</h3>
+
+					<p>Our Courier Service (Pvt.) <br>Limited has been playing a leading role in <br>these service activities of courier and parcel <br>since its inception in 1983.<br> The Founder, Chairman Imamul Kabir Shanto,<br> has led the effective development and establishment <br>of courier service in Bangladesh.</p>
 					
-						<li><a href="{{route('account.login')}}" title="Sell">Login</a></li>
-						<li><a href="{{route('account.register')}}" title="Advertise">Register</a></li>
-					
-					</ul> --}}
 				</div>
 			</div>			
 		</div>

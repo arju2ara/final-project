@@ -49,15 +49,7 @@
     @enderror
 				  		</div>
 				  		<div class="row">
-							<!-- <div class="col-8">
-					  			<div class="icheck-primary">
-									<input type="checkbox" id="remember">
-									<label for="remember">
-						  				Remember Me
-									</label>
-					  			</div>
-							</div> -->
-							<!-- /.col -->
+							
 							<div class="col-4">
 					  			<button type="submit" class="btn btn-primary btn-block">Login</button>
 							</div>
@@ -65,7 +57,7 @@
 				  		</div>
 					</form>
 		  			<p class="mb-1 mt-3">
-				  		<a href="forgot-password.html">I forgot my password</a>
+				  		{{-- <a href="forgot-password.html">I forgot my password</a> --}}
 					</p>					
 			  	</div>
 			  	<!-- /.card-body -->
